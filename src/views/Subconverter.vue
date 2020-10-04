@@ -139,7 +139,7 @@
                   >复制</el-button>
                 </el-input>
               </el-form-item>
-              <el-form-item label="订阅短链接:">
+              <!-- <el-form-item label="订阅短链接:">
                 <el-input class="copy-content" disabled v-model="curtomShortSubUrl">
                   <el-button
                     slot="append"
@@ -149,7 +149,7 @@
                     icon="el-icon-document-copy"
                   >复制</el-button>
                 </el-input>
-              </el-form-item>
+              </el-form-item> -->
 
               <el-form-item label-width="0px" style="margin-top: 40px; text-align: center">
                 <el-button
@@ -158,24 +158,24 @@
                   @click="makeUrl"
                   :disabled="form.sourceSubUrl.length === 0"
                 >生成订阅链接</el-button>
-                <el-button
+                <!-- <el-button
                   style="width: 120px"
                   type="danger"
                   @click="makeShortUrl"
                   :loading="loading"
                   :disabled="customSubUrl.length === 0"
-                >生成短链接</el-button>
+                >生成短链接</el-button> -->
                 <!-- <el-button style="width: 120px" type="primary" @click="surgeInstall" icon="el-icon-connection">一键导入Surge</el-button> -->
               </el-form-item>
 
               <el-form-item label-width="0px" style="text-align: center">
-                <el-button
+                <!-- <el-button
                   style="width: 120px"
                   type="primary"
                   @click="dialogUploadConfigVisible = true"
                   icon="el-icon-upload"
                   :loading="loading"
-                >上传配置</el-button>
+                >上传配置</el-button> -->
                 <el-button
                   style="width: 120px"
                   type="primary"
@@ -265,7 +265,7 @@ export default {
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
-          "sub-beta.now.sh (自动编译最新版本后端-测试）": "https://sub-beta.now.sh/sub?",
+          "sub.90.ms (920.im小站提供）": "https://sub.90.ms/sub?",
           "subcon.dlj.tf(subconverter作者提供-稳定)":
             "https://subcon.dlj.tf/sub?",
           "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
@@ -273,7 +273,7 @@ export default {
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
-          { value: "https://sub-beta.now.sh/sub?" },
+          { value: "https://sub.90.ms/sub?" },
           { value: "https://subcon.dlj.tf/sub?" },
           { value: "https://api.dler.io/sub?" },
           { value: "https://api.wcc.best/sub?" },
@@ -585,7 +585,7 @@ export default {
   },
   mounted() {
     this.form.clientType = "clash&new_name=true";
-    this.form.customBackend = "https://sub-beta.now.sh/sub?";
+    this.form.customBackend = "https://sub.90.ms/sub?";
     this.form.remoteConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
     this.getBackendVersion();
   },
